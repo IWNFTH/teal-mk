@@ -1,0 +1,16 @@
+.main{
+  outline: 1px solid #008080;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.op-links{
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.op-link{
+  padding-right: 10px;
+}

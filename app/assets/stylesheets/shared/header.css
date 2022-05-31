@@ -1,0 +1,80 @@
+.top-page-header{
+  outline: 1px solid #008080;
+  width: 100%;
+}
+
+.search-bar-contents{
+  padding: 10px;
+  outline: 1px solid #008080;
+  display: flex;
+  justify-content: space-between;
+}
+
+.teal-icon{
+  width: 120px;
+  font-size: 33px;
+  color: white;
+  background-color: #008080;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+}
+
+.my-page-link{
+  color: #008080;
+}
+
+.input-box
+
+.search-button{
+  height: 40px;
+  width: 40px;
+}
+
+.search-icon{
+  height: 40px;
+  width: 40px;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  outline: 1px solid #008080;
+  padding: 10px;
+}
+
+.lists-left{
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-btn{
+  padding: 5px;
+}
+
+.my-page-btn{
+  padding: 5px;
+}
+
+.news-btn{
+  padding: 5px;
+}
+
+.lists-right{
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-name
+
+.logout{
+  padding: 5px;
+}
+
+.login{
+  padding: 5px;
+}
+
+.sign-up */{
+  padding: 5px;
+}
