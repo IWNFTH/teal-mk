@@ -1,0 +1,104 @@
+<%= render "shared/header" %>
+<div class="op-contents">
+  <div class="op-main">
+    <%= form_with model: @opportunity, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="form-group">
+      <div class="weight-bold-text">商談名</div>
+      <%= f.text_area :op_name, class:"form-control form-size", id:"op-name", placeholder:"商談名（必須)", rows:"1" %>
+    </div>
+
+    <div class="form-group">
+      <div class="weight-bold-text">フリーテキスト</div>
+      <%= f.text_area :free_text, class:"form-control form-size", id:"free_text", placeholder:"フリーテキスト", rows:"5" %>
+    </div>
+
+    <div class="form-group">
+      <div class="weight-bold-text">担当者名：<%= @opportunity.user.name %></div>
+    </div>
+
+    <div class="form-group">
+      <div class="weight-bold-text">会社名</div>
+      <%= f.text_area :company, class:"form-control form-size", id:"company", placeholder:"会社名", rows:"1" %>
+    </div>
+
+    <div class="company_area_id">
+      <div class="weight-bold-text">エリア</div>
+      <%= f.collection_select(:company_area_id, CompanyArea.all, :id, :name, {}, {class:"select-box", id:"company-area"}) %>
+    </div>
+
+    <div class="form-group">
+      <div class="weight-bold-text">先方担当者名</div>
+      <%= f.text_area :person_in_charge, class:"form-control form-size", id:"person_in_charge", placeholder:"先方担当者名", rows:"1" %>
+    </div>
+
+    <div class="date_of_obtaining">
+      <div class="weight-bold-text">案件情報取得日</div>
+      <%= f.date_field :date_of_obtaining, class:"items-text", id:"date_of_obtaining", placeholder:"商談情報取得日" %>
+    </div>
+
+    <div class="date_of_participation">
+      <div class="weight-bold-text">参加決定日</div>
+      <%= f.date_field :date_of_obtaining, class:"items-text", id:"date_of_participation", placeholder:"参加決定日" %>
+    </div>
+
+    <div class="date_of_negotiation">
+      <div class="weight-bold-text">商談日</div>
+      <%= f.date_field :date_of_negotiation, class:"items-text", id:"date_of_negotiation", placeholder:"商談日" %>
+    </div>
+
+    <div class="form-group">
+      <div class="weight-bold-text">予定売上金額</div>
+      <%= f.text_area :estimated_sales_amount, class:"form-control form-size", id:"estimated_sales_amount", placeholder:"予定売上金額", rows:"1" %>
+    </div>
+
+    <div class="form-group">
+      <div class="weight-bold-text">確定売上金額</div>
+      <%= f.text_area :sales_amount, class:"form-control form-size", id:"sales_amount", placeholder:"確定売上金額", rows:"1" %>
+    </div>
+
+    <div class="contracted_date">
+      <div class="weight-bold-text">成約日</div>
+      <%= f.date_field :contracted_date, class:"items-text", id:"contracted_date", placeholder:"成約日" %>
+    </div>
+
+    <div class="lost_order_date">
+      <div class="weight-bold-text">失注日</div>
+      <%= f.date_field :lost_order_date, class:"items-text", id:"lost_order_date", placeholder:"失注日" %>
+    </div>
+
+    <div class="phase_id">
+      <div class="weight-bold-text">フェーズ</div>
+      <%= f.collection_select(:phase_id, Phase.all, :id, :name, {}, {class:"select-box", id:"phase"}) %>
+    </div>
+
+    <div class="purchase-btn-contents">
+      <%= f.submit "保存", class:"btn btn-primary" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+  </div>
+  <% end %>
+
+<%# コメント機能 %>
+  <div class="comment-form">
+  <%= form_with model: [@opportunity, @comment], id: "comment-form" do |f| %>
+    <%= f.text_area :text , class: "comment-text"%>
+    <%= f.submit "コメントをする", class: "comment-submit" %>
+  <% end %>
+</div>
+
+<div id="comments">
+  <h4>＜コメント一覧＞</h4>
+    <% @opportunity.comments.each do |c| %>
+      <div class="comment">
+        <p class="user-info"><%= c.user.name %>： </p>
+        <p><%= c.text%></p>
+      </div>
+    <% end %>
+</div>
+
+<%# /コメント機能 %>
+
+</div>

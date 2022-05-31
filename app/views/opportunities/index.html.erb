@@ -1,0 +1,34 @@
+<%= render "shared/header" %>
+<div class='main'>
+  <h1 class="page-heading">案件一覧</h2>
+  <%= link_to(new_opportunity_path, class: 'post-btn') do %>
+    <span class='post-btn-text'>新規案件投稿</span>
+  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  <% end %>
+  <form class="search-form" action="#">
+      <input class='input-box' placeholder='検索'>
+      <button class="search-button">
+        <%= image_tag "search.png", class:"search-icon" %>
+      </button>
+    </form>
+</div>
+
+<%# 案件一覧 %>
+  <ul class='lists'>
+    <% @opportunities.each do |o| %>
+      <li class='list'>
+        <%= link_to edit_opportunity_path(o.id) do %>
+          <div class='op-links'>
+            <div class='op-link'>案件名：<%= o.op_name %></div>
+            <div class='op-link'>会社名：<%= o.company %></div>
+            <div class='op-link'>エリア：<%= o.company_area.name %></div>
+            <div class='op-link'>担当者：<%= o.user.name %></div>
+            <div class='op-link'>フェーズ：<%= o.phase.name %></div>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<%# /案件一覧 %>
+
+</div>

@@ -1,0 +1,28 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <%= link_to 'Teal', "/", class: "teal-icon" %>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="my-page-link" viewBox="0 0 16 16">
+    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+    </svg>
+
+    <ul class='lists-right'>
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.name, "#", class: "user-name" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class='nav'>
+    <ul class='lists-left'>
+      <li><%= link_to 'ホーム', "#", class: "home-btn" %></li>
+      <li><%= link_to 'マイページ', "#", class: "my-page-btn" %></li>
+      <li><%= link_to 'NEWS', "#", class: "news-btn" %></li>
+    </ul>
+  </div>
+</header>
