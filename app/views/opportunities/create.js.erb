@@ -1,0 +1,3 @@
+$("text_field").val("");
+$('#exampleModal').modal('hide')
+$('.opportunities').html("<%= escape_javascript(render 'opportunities', opportunities: @opportunities)%>")

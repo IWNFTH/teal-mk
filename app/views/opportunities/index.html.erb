@@ -5,30 +5,81 @@
     <span class='post-btn-text'>新規案件投稿</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
   <% end %>
-  <form class="search-form" action="#">
-      <input class='input-box' placeholder='検索'>
-      <button class="search-button">
-        <%= image_tag "search.png", class:"search-icon" %>
-      </button>
-    </form>
+
+<%# モーダル投稿機能 %>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-3">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">新規案件</button>
+    </div>
+    <div class="col-9 opportunities">
+      <%= render 'opportunities', opportunities: @opportunities %>
+    </div>
+  </div>
 </div>
 
-<%# 案件一覧 %>
-  <ul class='lists'>
-    <% @opportunities.each do |o| %>
-      <li class='list'>
-        <%= link_to edit_opportunity_path(o.id) do %>
-          <div class='op-links'>
-            <div class='op-link'>案件名：<%= o.op_name %></div>
-            <div class='op-link'>会社名：<%= o.company %></div>
-            <div class='op-link'>エリア：<%= o.company_area.name %></div>
-            <div class='op-link'>担当者：<%= o.user.name %></div>
-            <div class='op-link'>フェーズ：<%= o.phase.name %></div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">新規案件投稿</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <%= form_for @opportunity, remote: true do |f| %>
+        <div class="modal-body">
+          <div class="form-groupe">
+            <%= f.label :op_name, "案件名" %>
+            <%= f.text_field :op_name, class: "form_control" %>
           </div>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-<%# /案件一覧 %>
+          <div class="form-groupe">
+            <%= f.label :op_name, "会社名" %>
+            <%= f.text_field :company, class: "form_control" %>
+          </div>
+          <div class="form-groupe">
+            <%= f.label :op_name, "エリア" %>
+            <%= f.collection_select(:company_area_id, CompanyArea.all, :id, :name, {}, {class: "form_control", id:"company-area"}) %>
+          </div>
+          <div class="form-groupe">
+            <%= f.label :op_name, "先方担当者名" %>
+            <%= f.text_field :person_in_charge, class: "form_control" %>
+          </div>
+          <div class="form-groupe">
+            <%= f.label :op_name, "商品情報取得日" %>
+            <%= f.date_field :date_of_obtaining, class: "form_control" %>
+          </div>
+          <div class="form-groupe">
+            <%= f.label :op_name, "フェーズ" %>
+            <%= f.collection_select(:phase_id, Phase.all, :id, :name, {}, {class: "form_control", id:"phase"}) %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          <%= f.submit "投稿する", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%# /モーダル投稿機能 %>
+
+</div>
+
+
+  <%# <ul class='lists'> %>
+    <%# <% @opportunities.each do |o| %>
+      <%# <li class='list'> %>
+        <%# <%= link_to edit_opportunity_path(o.id) do %>
+          <%# <div class='op-links'> %>
+            <%# <div class='op-link'>案件名：<%= o.op_name %>
+            <%# <div class='op-link'>会社名：<%= o.company %>
+            <%# <div class='op-link'>エリア：<%= o.company_area.name %>
+            <%# <div class='op-link'>担当者：<%= o.user.name %>
+            <%# <div class='op-link'>フェーズ：<%= o.phase.name %>
+          <%# </div> %>
+        <%# <% end %>
+      <%# </li> %>
+    <%# <% end %>
+  <%# </ul> %>
+
 
 </div>
