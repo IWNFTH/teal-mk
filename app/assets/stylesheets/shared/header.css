@@ -43,38 +43,12 @@
   padding: 10px;
 }
 
-.lists-left{
+.btns{
   display: flex;
   justify-content: space-between;
+  line-height: 50px;
 }
 
-.home-btn{
-  padding: 5px;
-}
-
-.my-page-btn{
-  padding: 5px;
-}
-
-.news-btn{
-  padding: 5px;
-}
-
-.lists-right{
-  display: flex;
-  justify-content: space-between;
-}
-
-.user-name
-
-.logout{
-  padding: 5px;
-}
-
-.login{
-  padding: 5px;
-}
-
-.sign-up{
-  padding: 5px;
+.btn{
+  border: 10px;
 }

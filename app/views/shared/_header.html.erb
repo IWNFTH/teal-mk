@@ -3,13 +3,6 @@
   <div class='search-bar-contents'>
     <%= link_to 'Teal', "/", class: "teal-icon" %>
 
-    <form class="search-form" action="#">
-      <input class='input-box' placeholder='検索'>
-      <button class="search-button">
-        <%= image_tag "search.png", class:"search-icon" %>
-      </button>
-    </form>
-
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background: #008080">
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="my-page-link" viewBox="0 0 16 16">
@@ -19,7 +12,7 @@
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
         <% if user_signed_in? %>
-          <li><%= link_to current_user.name, "#", class: "dropdown-item" %></li>
+          <li><%= link_to current_user.name, "/users/#{current_user.id}", class: "dropdown-item" %></li>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
         <% else %>
           <li><%= link_to 'ログイン', new_user_session_path, class: "dropdown-item" %></li>
@@ -27,15 +20,27 @@
         <% end %>
       </ul>
     </div>
-
-    <ul class='lists-right'>
-    </ul>
   </div>
+
   <div class='nav'>
-    <ul class='lists-left'>
-      <li><%= link_to 'ホーム', "#", class: "home-btn" %></li>
-      <li><%= link_to 'マイページ', "#", class: "my-page-btn" %></li>
-      <li><%= link_to 'NEWS', "#", class: "news-btn" %></li>
-    </ul>
+    <div class='btns'>
+        <% if user_signed_in? %>
+      <div><%= link_to 'ホーム', "/", class: "btn" %></div>
+      <div><%= link_to 'NEWS', "#", class: "btn" %></div>
+      <div><%= link_to 'マイページ', "/users/#{current_user.id}", class: "btn" %></div>
+        <% else %>
+      <div><%= link_to 'ホーム', "/", class: "btn" %></div>
+      <div><%= link_to 'NEWS', "#", class: "btn" %></div>
+        <% end %>
+    </div>
+
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
   </div>
 </header>

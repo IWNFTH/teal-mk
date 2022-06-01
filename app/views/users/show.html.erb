@@ -1,0 +1,16 @@
+<%= render "shared/header" %>
+<div class='main'>
+  <% @opportunities.each do |o| %>
+  <div class="card mb-1">
+    <%= link_to edit_opportunity_path(o.id) do %>
+      <div class="card-body">
+        <div class="card-text"><%= o.op_name %></div>
+        <div class="card-text"><%= simple_format o.company %></div>
+        <div class="card-text"><%= simple_format o.company_area.name %></div>
+        <div class="card-text"><%= simple_format o.user.name %></div>
+        <div class="card-text"><%= simple_format o.phase.name %></div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+</div>
