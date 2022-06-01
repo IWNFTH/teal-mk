@@ -5,6 +5,8 @@ class Opportunity < ApplicationRecord
   belongs_to :company_area
   has_many :comments
 
+  validates :op_name, presence: true
+  validates :company, presence: true
   validates :phase_id, numericality: { equal_to: 1 }
   validates :company_area_id, numericality: { other_than: 1, message: "can't be blank"} 
 

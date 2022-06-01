@@ -3,19 +3,23 @@ class OpportunitiesController < ApplicationController
 
   def index
     @opportunities = Opportunity.all
-  end
-
-  def new
     @opportunity = Opportunity.new
   end
 
+  # def new
+    # @opportunity = Opportunity.new
+  # end
+
   def create
-    @opportunity = Opportunity.new(opportunity_params)
-    if @opportunity.save
-      redirect_to root_path
-    else
-      render :new
-    end
+    Opportunity.create(opportunity_params)
+    @opportunities = Opportunity.all
+
+    # @opportunity = Opportunity.new(opportunity_params)
+    # if @opportunity.save
+      # redirect_to root_path
+    # else
+      # render :new
+    # end
   end
 
   def edit

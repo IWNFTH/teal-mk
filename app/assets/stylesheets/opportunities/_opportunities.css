@@ -1,0 +1,8 @@
+.card-body{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card-text{
+  padding-right: 10px;
+}
