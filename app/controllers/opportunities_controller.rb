@@ -6,14 +6,14 @@ class OpportunitiesController < ApplicationController
     @opportunity = Opportunity.new
   end
 
-  def new
-    @opportunity = Opportunity.new
-  end
+  # def new
+    # @opportunity = Opportunity.new
+  # end
 
   def create
     Opportunity.create(opportunity_params)
     @opportunities = Opportunity.all
-    
+
     # @opportunity = Opportunity.new(opportunity_params)
     # if @opportunity.save
       # redirect_to root_path
