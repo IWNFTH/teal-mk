@@ -1,12 +1,7 @@
 <%= render "shared/header" %>
 <div class="op-contents">
   <div class="op-main">
-
-<%# タブ %>
-
-<%# /タブ %>
-
-    <div class="edit-form">
+    <div class="edit-form col-8">
       <%= form_with model: @opportunity, local: true do |f| %>
 
       <%= render 'shared/error_messages', model: f.object %>
@@ -92,26 +87,30 @@
           <%= f.submit "保存", class:"btn btn-primary" %>
         </div>
       </div>
+    <% end %>
     </div>
-    <% end %>
-  </div>
 
-<%# コメント機能 %>
-  <div class="comment-form">
-  <%= form_with model: [@opportunity, @comment], id: "comment-form" do |f| %>
-    <%= f.text_area :text , class: "comment-text"%>
-    <%= f.submit "コメントをする", class: "comment-submit" %>
-  <% end %>
-</div>
-
-<div id="comments">
-  <h4>＜コメント一覧＞</h4>
-    <% @opportunity.comments.each do |c| %>
-      <div class="comment">
-        <p class="user-info"><%= c.user.name %>： </p>
-        <p><%= c.text%></p>
+    <%# コメント機能 %>
+    <div class="comment-forms col-3">
+      <div id="comments">
+        <h4>＜コメント一覧＞</h4>
+          <% @opportunity.comments.each do |c| %>
+            <div class="comment">
+              <p class="user-info"><%= c.created_at %> </p>
+              <p class="user-info"><%= c.user.name %>： </p>
+              <p><%= c.text%></p>
+            </div>
+          <% end %>
       </div>
-    <% end %>
-</div>
-<%# /コメント機能 %>
+
+      <div class="comment-form">
+        <%= form_with model: [@opportunity, @comment], id: "comment-form" do |f| %>
+          <%= f.text_area :text , class: "comment-text"%>
+          <%= f.submit "コメントをする", class: "comment-submit" %>
+        <% end %>
+      </div>
+    </div>
+    <%# /コメント機能 %>
+
+  </div>
 </div>

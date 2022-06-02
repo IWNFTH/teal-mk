@@ -1,4 +1,5 @@
 .op-main{
+  display: flex;
   padding: 10px;
   background: linear-gradient(45deg,#11998e,#38ef7d)
 }
@@ -10,7 +11,14 @@
 .edit-form{
   background-color: white;
   border-radius: 10px;
-  margin: 30px;
+  margin: 30px 10px 30px 30px;
+  padding: 15px;
+}
+
+.comment-forms{
+  background-color: white;
+  border-radius: 10px;
+  margin: 30px 30px 30px 10px;
   padding: 15px;
 }
 
@@ -18,9 +26,3 @@
   display: flex;
   justify-content: center;
 }
-
-
-
-/* コメントタブ用 */
-
-/* コメントタブ用 */
