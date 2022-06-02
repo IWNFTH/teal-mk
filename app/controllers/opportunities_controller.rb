@@ -16,8 +16,9 @@ class OpportunitiesController < ApplicationController
     @comments = @opportunity.comments.includes(:user)
     @comment = Comment.new
   end
-
+  
   def update
+    @comment = Comment.new
     @opportunity = Opportunity.find(params[:id])
     @opportunity.update(opportunity_params_edit)
     if @opportunity.save
