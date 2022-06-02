@@ -19,7 +19,7 @@ class OpportunitiesController < ApplicationController
 
   def update
     @opportunity = Opportunity.find(params[:id])
-    @opportunity.update(opportunity_params)
+    @opportunity.update(opportunity_params_edit)
     if @opportunity.save
       redirect_to edit_opportunity_path
     else
@@ -33,6 +33,11 @@ class OpportunitiesController < ApplicationController
   def opportunity_params
     params.require(:opportunity).permit(:user_id, :op_name, :company, :person_in_charge, :date_of_obtaining, :date_of_participation, :phase_id,
       :date_of_negotiation, :estimated_sales_amount, :sales_amount, :contracted_date, :lost_order_date, :company_area_id, :free_text).merge(user_id: current_user.id)
+  end
+
+  def opportunity_params_edit
+    params.require(:opportunity).permit(:op_name, :company, :person_in_charge, :date_of_obtaining, :date_of_participation, :phase_id,
+      :date_of_negotiation, :estimated_sales_amount, :sales_amount, :contracted_date, :lost_order_date, :company_area_id, :free_text)
   end
 
 end
