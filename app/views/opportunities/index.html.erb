@@ -4,10 +4,10 @@
   <%# モーダル投稿機能 %>
   <div class="container">
     <div class="row">
-      <div class="col-2">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">新規案件</button>
+      <div class="post-btn">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">新規案件投稿</button>
       </div>
-      <div class="col-9 opportunities">
+      <div class="opportunities">
         <%= render 'opportunities', opportunities: @opportunities %>
       </div>
     </div>
@@ -56,28 +56,4 @@
     </div>
   </div>
   <%# /モーダル投稿機能 %>
-
-  
-
-
-  <%# </div> %>
-
-
-  <%# <ul class='lists'> %>
-    <%# <% @opportunities.each do |o| %>
-      <%# <li class='list'> %>
-        <%# <%= link_to edit_opportunity_path(o.id) do %>
-          <%# <div class='op-links'> %>
-            <%# <div class='op-link'>案件名：<%= o.op_name %>
-            <%# <div class='op-link'>会社名：<%= o.company %>
-            <%# <div class='op-link'>エリア：<%= o.company_area.name %>
-            <%# <div class='op-link'>担当者：<%= o.user.name %>
-            <%# <div class='op-link'>フェーズ：<%= o.phase.name %>
-          <%# </div> %>
-        <%# <% end %>
-      <%# </li> %>
-    <%# <% end %>
-  <%# </ul> %>
-
-
 </div>

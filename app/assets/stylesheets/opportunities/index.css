@@ -1,14 +1,9 @@
 .main{
   outline: 1px solid #008080;
   padding: 10px;
+  background: linear-gradient(45deg,#11998e,#38ef7d)
 }
 
-.op-links{
-  display: flex;
-  justify-content: flex-start;
-  padding: 10px;
-}
-
-.op-link{
-  padding-right: 10px;
+.post-btn{
+  margin-bottom: 10px;
 }

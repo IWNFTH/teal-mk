@@ -1,16 +1,34 @@
 <%= render "shared/header" %>
 <div class='main'>
-  <% @opportunities.each do |o| %>
-  <div class="card mb-1">
-    <%= link_to edit_opportunity_path(o.id) do %>
-      <div class="card-body">
-        <div class="card-text"><%= o.op_name %></div>
-        <div class="card-text"><%= simple_format o.company %></div>
-        <div class="card-text"><%= simple_format o.company_area.name %></div>
-        <div class="card-text"><%= simple_format o.user.name %></div>
-        <div class="card-text"><%= simple_format o.phase.name %></div>
-      </div>
-    <% end %>
+  <div class="my-page">
+    <div class="opportunities">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">案件名</th>
+            <th scope="col">会社名</th>
+            <th scope="col">エリア</th>
+            <th scope="col">担当者</th>
+            <th scope="col">フェーズ</th>
+          </tr>
+        </thead>
+
+        <% @opportunities.each do |o| %>
+          <%= link_to edit_opportunity_path(o.id) do %>
+            <tbody>
+              <tr onclick='window.location="<%= edit_opportunity_path(o.id) %>"' role="link">
+                <th scope="row"><%= o.id %></th>
+                <td class="table-link"><%= o.op_name %></td>
+                <td class="table-link"><%= o.company %></td>
+                <td class="table-link"><%= o.company_area.name %></td>
+                <td class="table-link"><%= o.user.name %></td>
+                <td class="table-link"><%= o.phase.name %></td>
+              </tr>
+            </tbody>
+          <% end %>
+        <% end %>
+      </table>
+    </div>
   </div>
-<% end %>
 </div>

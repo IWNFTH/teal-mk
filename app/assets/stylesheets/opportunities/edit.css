@@ -1,7 +1,26 @@
 .op-main{
   padding: 10px;
+  background: linear-gradient(45deg,#11998e,#38ef7d)
 }
 
 .form-size{
   width: 60%;
 }
+
+.edit-form{
+  background-color: white;
+  border-radius: 10px;
+  margin: 30px;
+  padding: 15px;
+}
+
+.purchase{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* コメントタブ用 */
+
+/* コメントタブ用 */

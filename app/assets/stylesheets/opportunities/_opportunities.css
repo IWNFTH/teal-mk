@@ -6,3 +6,18 @@
 .card-text{
   padding-right: 10px;
 }
+
+.table-link{
+  color: #0C6EFD;
+}
+
+.table-link:hover{
+  color: #0C1EFD;
+  cursor: pointer;
+}
+
+.opportunities{
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 10px;
+}
