@@ -16,10 +16,35 @@
 }
 
 .comment-forms{
-  background-color: white;
+  background-color: #F0F2F7;
   border-radius: 10px;
   margin: 30px 30px 30px 10px;
   padding: 15px;
+}
+
+.comment{
+  width: 100%;
+  display: block;
+  padding-bottom: 5px;
+}
+
+.comment-info{
+  display: flex;
+  justify-content: space-between
+}
+
+.comment-user{
+  font-size: small;
+}
+
+.comment-time{
+  font-size: small;
+}
+
+.comment-text{
+  background-color: white;
+  display: inline-block;
+  border-radius: 5px;
 }
 
 .purchase{

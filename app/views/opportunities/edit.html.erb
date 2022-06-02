@@ -93,12 +93,14 @@
     <%# コメント機能 %>
     <div class="comment-forms col-3">
       <div id="comments">
-        <h4>＜コメント一覧＞</h4>
+        <h4>コメント一覧</h4>
           <% @opportunity.comments.each do |c| %>
             <div class="comment">
-              <p class="user-info"><%= c.created_at %> </p>
-              <p class="user-info"><%= c.user.name %>： </p>
-              <p><%= c.text%></p>
+              <div class="comment-text"><%= c.text%></div>
+              <div class="comment-info">
+                <p class="comment-user"><%= c.user.name %></p>
+                <p class="comment-time"><%= l c.created_at %> </p>
+              </div>
             </div>
           <% end %>
       </div>
