@@ -6,3 +6,12 @@
 .card-text{
   padding-right: 10px;
 }
+
+.table-link{
+  color: #0C6EFD;
+}
+
+.table-link:hover{
+  color: #0C1EFD;
+  cursor: pointer;
+}
