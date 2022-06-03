@@ -1,9 +1,24 @@
+html,body{
+  height: 100%;
+}
+
 .main{
-  outline: 1px solid #008080;
+  height: 100%;
   padding: 10px;
-  background: linear-gradient(45deg,#11998e,#38ef7d)
+  background: linear-gradient(45deg,#11998e,#008080)
 }
 
 .post-btn{
   margin-bottom: 10px;
+}
+
+.op-index{
+  margin: 15px 40px;
+}
+
+.news{
+  background-color: white;
+  margin: 30px 50px;
+  padding: 20px;
+  border-radius: 10px;
 }
