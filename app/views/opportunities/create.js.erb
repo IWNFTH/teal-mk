@@ -1,3 +1,5 @@
-$("text_field").val("");
+$("textfield").val("");
+$("select").val("");
+$("input").val("");
 $('#exampleModal').modal('hide')
-$('.opportunities').html("<%= escape_javascript(render 'opportunities', opportunities: @opportunities)%>")
+$('.opportunities').html("<%= escape_javascript(render 'opportunities', opportunities: @opportunities) %>")

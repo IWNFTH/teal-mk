@@ -27,10 +27,10 @@
         <% if user_signed_in? %>
       <div><%= link_to 'ホーム', "/", class: "btn" %></div>
       <div><%= link_to 'NEWS', news_index_path, class: "btn" %></div>
-      <div><%= link_to 'マイページ', "/users/#{current_user.id}", class: "btn" %></div>
+      <div><%= link_to "#{current_user.name}のマイページ", "/users/#{current_user.id}", class: "btn" %></div>
         <% else %>
       <div><%= link_to 'ホーム', "/", class: "btn" %></div>
-      <div><%= link_to 'NEWS', "#", class: "btn" %></div>
+      <div><%= link_to 'NEWS', news_index_path, class: "btn" %></div>
         <% end %>
     </div>
 

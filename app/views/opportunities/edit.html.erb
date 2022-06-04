@@ -72,16 +72,27 @@
             <div class="weight-bold-text">商談日</div>
             <%= f.date_field :date_of_negotiation, class:"items-text", id:"date_of_negotiation", placeholder:"商談日" %>
           </div>
+        </div><br>
+
+        <div class="row">
+          <div class="form-group col-6">
+            <div class="weight-bold-text">予定売上金額（円）</div>
+            <%= f.text_area :estimated_sales_amount, class:"form-control form-size", id:"estimated_sales_amount", placeholder:"予定売上金額", rows:"1" %>
+          </div>
+          <div class="form-group col-6">
+            <div class="weight-bold-text">確定売上金額（円）</div>
+            <%= f.text_area :sales_amount, class:"form-control form-size", id:"sales_amount", placeholder:"確定売上金額", rows:"1" %>
+          </div>
         </div>
 
         <div class="row">
           <div class="form-group col-6">
-            <div class="weight-bold-text">予定売上金額</div>
-            <%= f.text_area :estimated_sales_amount, class:"form-control form-size", id:"estimated_sales_amount", placeholder:"予定売上金額", rows:"1" %>
+            <div class="weight-bold-text">予定概算粗利益</div>
+            <%= "金額" %>
           </div>
           <div class="form-group col-6">
-            <div class="weight-bold-text">確定売上金額</div>
-            <%= f.text_area :sales_amount, class:"form-control form-size", id:"sales_amount", placeholder:"確定売上金額", rows:"1" %>
+            <div class="weight-bold-text">確定概算粗利益</div>
+            <%= "金額" %>
           </div>
         </div>
 
