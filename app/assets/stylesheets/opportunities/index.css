@@ -5,11 +5,25 @@ html,body{
 .main{
   height: 100%;
   padding: 10px;
-  background: linear-gradient(45deg,#11998e,#008080)
+  background: #DDDDDD;
 }
 
 .post-btn{
   margin-bottom: 10px;
+}
+
+.btn-orange{
+  color: white;
+  background-color:#F28E31;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-bottom: 8px;
+}
+
+.btn-orange:hover{
+  background-color: #E27E21;
+  box-shadow: 0 2px 4px gray;
 }
 
 .op-index{

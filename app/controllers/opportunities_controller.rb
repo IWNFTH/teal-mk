@@ -4,6 +4,8 @@ class OpportunitiesController < ApplicationController
   def index
     @opportunities = Opportunity.all
     @opportunity = Opportunity.new
+    @q = Opportunity.ransack(params[:q])
+    @opportunities = @q.result
   end
 
   def create
@@ -27,6 +29,8 @@ class OpportunitiesController < ApplicationController
       render :edit
     end
   end
+
+
 
   private
 
