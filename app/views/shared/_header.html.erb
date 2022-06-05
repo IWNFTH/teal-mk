@@ -1,7 +1,7 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class='top-page-header'>
   <div class='search-bar-contents'>
-    <%= link_to 'Teal', "/", class: "teal-icon" %>
+    <%= link_to image_tag('teal-06.png', class: "teal-icon"), "/" %>
 
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background: #008080">
@@ -23,24 +23,34 @@
   </div>
 
   <div class='nav'>
-    <div class='btns'>
+    <div class='buttons'>
         <% if user_signed_in? %>
-      <div><%= link_to 'ホーム', "/", class: "btn" %></div>
-      <div><%= link_to 'NEWS', news_index_path, class: "btn" %></div>
-      <div><%= link_to "#{current_user.name}のマイページ", "/users/#{current_user.id}", class: "btn" %></div>
+      <div><%= link_to 'ホーム', "/", class: "button" %></div>
+      <div><%= link_to 'NEWS', news_index_path, class: "button" %></div>
+      <div><%= link_to "#{current_user.name}のマイページ", "/users/#{current_user.id}", class: "button" %></div>
         <% else %>
-      <div><%= link_to 'ホーム', "/", class: "btn" %></div>
-      <div><%= link_to 'NEWS', news_index_path, class: "btn" %></div>
+      <div><%= link_to 'ホーム', "/", class: "button" %></div>
+      <div><%= link_to 'NEWS', news_index_path, class: "button" %></div>
         <% end %>
     </div>
 
-    <nav class="navbar navbar-light bg-light">
-      <div class="container-fluid">
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
+    <nav class="search">
+      <%= search_form_for @q, url: opportunities_path, html: {id: "detailed-search-form"} do |f| %>
+        <div class="search-field">
+          <%= f.label :op_name_cont, '案件名' %>
+          <%= f.text_field :op_name_cont, placeholder: '案件名' %>
+          <%= f.label :company_cont, '会社名' %>
+          <%= f.text_field :company_cont, placeholder: '会社名' %>
+          <%= f.submit '検索' %>
+        </div>
+      <% end %>
+
+        <%# <form class="d-flex"> %>
+          <%# <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> %>
+          <%# <button class="btn btn-outline-success" type="submit">Search</button> %>
+        <%# </form> %>
+
     </nav>
+
   </div>
 </header>

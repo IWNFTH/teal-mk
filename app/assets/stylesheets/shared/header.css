@@ -7,23 +7,23 @@
   padding: 10px;
   display: flex;
   justify-content: space-between;
+  background-color: white;
 }
 
 .teal-icon{
-  width: 120px;
-  font-size: 33px;
-  color: white;
-  background-color: #008080;
-  text-decoration: none;
+  width: 200px;
+  background-color: white;
   text-align: center;
-  margin-left: 40px;
+  margin: 10px 0 0 40px;
+}
+
+.dropdown{
+  padding: 16px 40px 0 0;
 }
 
 .my-page-link{
   color: white;
 }
-
-.input-box
 
 .search-button{
   height: 40px;
@@ -40,15 +40,32 @@
   display: flex;
   justify-content: space-between;
   outline: 1px solid #008080;
+  background-color: #008080;
 }
 
-.btns{
+.buttons{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   line-height: 50px;
-  padding-left: 40px;
+  padding-left: 56px;
 }
 
-.btn{
+.button{
   border: 10px;
+  color: white;
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.search{
+  display: flex;
+  align-items: center;
+  padding: 8px 50px 0 0;
+  color: white;
+}
+
+.container{
+  display: flex;
+  align-items: center;
 }
