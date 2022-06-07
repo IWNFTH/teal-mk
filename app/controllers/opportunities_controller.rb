@@ -12,7 +12,7 @@ class OpportunitiesController < ApplicationController
     Opportunity.create(opportunity_params)
     @opportunities = Opportunity.all
   end
-
+  
   def edit
     @opportunity = Opportunity.find(params[:id])
     @comments = @opportunity.comments.includes(:user)
@@ -30,8 +30,6 @@ class OpportunitiesController < ApplicationController
     end
   end
 
-
-
   private
 
   def opportunity_params
@@ -41,7 +39,7 @@ class OpportunitiesController < ApplicationController
 
   def opportunity_edit_params
     params.require(:opportunity).permit(:op_name, :company, :person_in_charge, :date_of_obtaining, :date_of_participation, :phase_id,
-      :date_of_negotiation, :estimated_sales_amount, :sales_amount, :contracted_date, :lost_order_date, :company_area_id, :free_text)
+      :date_of_negotiation, :estimated_sales_amount, :sales_amount, :contracted_date, :lost_order_date, :company_area_id, :free_text, :estimated_approximate_profit, :approximate_profit)
   end
 
 end

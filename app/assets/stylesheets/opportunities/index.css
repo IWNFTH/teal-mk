@@ -36,3 +36,16 @@ html,body{
   padding: 20px;
   border-radius: 10px;
 }
+
+.form-groupe{
+  margin-bottom: 20px;
+}
+
+.form_control{
+  width: 160px;
+  height: 30px;
+}
+
+.form-row{
+  display: flex;
+}
