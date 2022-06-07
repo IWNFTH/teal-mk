@@ -45,12 +45,9 @@
         </div>
       <% end %>
 
-        <%# <form class="d-flex"> %>
-          <%# <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> %>
-          <%# <button class="btn btn-outline-success" type="submit">Search</button> %>
-        <%# </form> %>
-
     </nav>
-
+      <%# CSV出力ボタン %>
+      <%= link_to "csvで出力する",root_path(format: :csv) %>
+      <%# /CSV出力ボタン %>
   </div>
 </header>
