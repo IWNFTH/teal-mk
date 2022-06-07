@@ -47,7 +47,9 @@
 
     </nav>
       <%# CSV出力ボタン %>
-      <%= link_to "csvで出力する",root_path(format: :csv) %>
+      <div class="csv">
+        <%= link_to "CSV出力",root_path(format: :csv) %>
+      </div>
       <%# /CSV出力ボタン %>
   </div>
 </header>

@@ -58,7 +58,8 @@ class OpportunitiesController < ApplicationController
         column_values = [
           op.op_name,
           op.company,
-          op.company_area_id,
+          op.company_area.name,
+          op.user.name,
           op.date_of_obtaining,
           op.contracted_date,
           op.estimated_sales_amount,
