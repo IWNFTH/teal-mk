@@ -72,6 +72,4 @@ class OpportunitiesController < ApplicationController
     end
     send_data(csv_data, filename: "案件一覧.csv")
   end
-      :date_of_negotiation, :estimated_sales_amount, :sales_amount, :contracted_date, :lost_order_date, :company_area_id, :free_text)
-  end
 end

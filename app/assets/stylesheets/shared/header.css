@@ -69,3 +69,28 @@
   display: flex;
   align-items: center;
 }
+
+.csv-btn{
+  background-color: #EFEFEF;
+  height: 28px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 18px 60px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.csv-btn:hover{
+  box-shadow: 0 2px 4px black;
+}
+
+.csv-btn a{
+  text-decoration: none;
+  color: black;
+}
+
+.csv-btn a:hover{
+  color: black;
+}
