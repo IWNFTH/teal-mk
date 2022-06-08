@@ -6,6 +6,7 @@ Teal(ティール)
 
 # URL
 
+
 # テスト用アカウント
 ID：
 
@@ -65,24 +66,22 @@ PW：
 
 ## opportunities テーブル
 
-| Column                      | Type       | Options                        |
-| --------------------------- | ---------- | ------------------------------ |
-| op_name                     | string     | null: false                    |
-| user                        | references | null: false, foreign_key: true |
-| company                     | string     | null: false                    |
-| company_area_id             | integer    | null: false                    |
-| person_in_charge            | string     | null: false                    |
-| date_of_obtaining           | date       | null: false                    |
-| date_of_participation       | date       |                                |
-| date_of_negotiation         | date       |                                |
-| estimated_sales_amount      | integer    |                                |
-| sales_amount                | integer    |                                |
-| estimated_approximate_profit| integer    |                                |
-| approximate_profit          | integer    |                                |
-| contracted_date             | date       |                                |
-| lost_order_date             | date       |                                |
-| phase_id                    | integer    | null: false                    |
-| free_text                   | text       |                                |
+| Column                 | Type       | Options                        |
+| ---------------------- | ---------- | ------------------------------ |
+| op_name                | string     | null: false                    |
+| user                   | references | null: false, foreign_key: true |
+| company                | string     | null: false                    |
+| company_area_id        | integer    | null: false                    |
+| person_in_charge       | string     | null: false                    |
+| date_of_obtaining      | date       | null: false                    |
+| date_of_participation  | date       |                                |
+| date_of_negotiation    | date       |                                |
+| estimated_sales_amount | integer    |                                |
+| sales_amount           | integer    |                                |
+| contracted_date        | date       |                                |
+| lost_order_date        | date       |                                |
+| phase_id               | integer    | null: false                    |
+| free_text              | text       |                                |
 
 ### Association
 
