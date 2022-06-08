@@ -22,34 +22,30 @@
         </div>
         <%= form_for @opportunity, remote: true do |f| %>
           <div class="modal-body">
-            <div class="form-row">
-              <div class="form-groupe col-6">
-                <%= f.label :op_name, "案件名" %><br>
-                <%= f.text_field :op_name, class: "form_control" %>
-              </div>
-              <div class="form-groupe col-6">
-                <%= f.label :op_name, "会社名" %><br>
-                <%= f.text_field :company, class: "form_control" %>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-groupe col-6">
-                <%= f.label :op_name, "エリア" %><br>
-                <%= f.collection_select(:company_area_id, CompanyArea.all, :id, :name, {}, {class: "form_control", id:"company-area"}) %>
-              </div>
-              <div class="form-groupe col-6">
-                <%= f.label :op_name, "先方担当者名" %><br>
-                <%= f.text_field :person_in_charge, class: "form_control" %>
-              </div>
+            <div class="form-groupe">
+              <%= f.label :op_name, "案件名" %>
+              <%= f.text_field :op_name, class: "form_control" %>
             </div>
             <div class="form-groupe">
-              <%= f.label :op_name, "商品情報取得日" %><br>
+              <%= f.label :op_name, "会社名" %>
+              <%= f.text_field :company, class: "form_control" %>
+            </div>
+            <div class="form-groupe">
+              <%= f.label :op_name, "エリア" %>
+              <%= f.collection_select(:company_area_id, CompanyArea.all, :id, :name, {}, {class: "form_control", id:"company-area"}) %>
+            </div>
+            <div class="form-groupe">
+              <%= f.label :op_name, "先方担当者名" %>
+              <%= f.text_field :person_in_charge, class: "form_control" %>
+            </div>
+            <div class="form-groupe">
+              <%= f.label :op_name, "商品情報取得日" %>
               <%= f.date_field :date_of_obtaining, class: "form_control" %>
             </div>
-            <%# <div class="form-groupe"> %>
-              <%# <%= f.label :op_name, "フェーズ" %>
-              <%# <%= f.collection_select(:phase_id, Phase.all, :id, :name, {}, {class: "form_control", id:"phase"}) %>
-            <%# </div> %>
+            <div class="form-groupe">
+              <%= f.label :op_name, "フェーズ" %>
+              <%= f.collection_select(:phase_id, Phase.all, :id, :name, {}, {class: "form_control", id:"phase"}) %>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
