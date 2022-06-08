@@ -2,37 +2,43 @@
 <div class="op-contents">
   <div class="op-main">
 
-      <div class="main-head-contents">
-    <div class="main-head">
-    <%# フェーズ(Progressバー) %>
+    <div class="main-head-contents">
+      <div class="main-head">
+        <%# フェーズ(Progressバー) %>
         <div class="status-bar">
           <div class="phase">フェーズ</div>
           <div class="progress" style="height: 30px;">
-            <div class="progress-bar"
-                role="progressbar"
-                style="width: 25%;">
-                <%= @opportunity.phase.name %>
-            </div>
+            <% if @opportunity.phase_id == 1 %>
+              <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%= @opportunity.phase.name %></div>
+            <% elsif @opportunity.phase_id == 2 %>
+              <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%= @opportunity.phase.name %></div>
+            <% elsif @opportunity.phase_id == 3 %>
+              <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%= @opportunity.phase.name %></div>
+            <% elsif @opportunity.phase_id == 4 %>
+              <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%= @opportunity.phase.name %></div>
+            <% elsif @opportunity.phase_id == 5 %>
+              <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%= @opportunity.phase.name %></div>
+            <% elsif @opportunity.phase_id == 6 %>
+              <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%= @opportunity.phase.name %></div>
+            <% else %>
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%= @opportunity.phase.name %></div>
+            <% end %>
           </div>
         </div>
-    <%# /フェーズ(Progressバー) %>
-    </div>
+        <%# /フェーズ(Progressバー) %>
       </div>
-    
+    </div>
+
     <div class="main-foot">
       <div class="edit-form col-8">
         <%= form_with model: @opportunity, local: true do |f| %>
 
         <%= render 'shared/error_messages', model: f.object %>
 
-        <div class="form-group">
-          <div class="weight-bold-text">伝達事項</div>
-          <%= f.text_area :free_text, class:"form-control form-size", id:"free_text", placeholder:"フリーテキスト", rows:"3" %>
-        </div>
 
         <div class="row">
           <div class="form-group col-6">
-            <div class="weight-bold-text">商談名</div>
+            <div class="weight-bold-text">案件名</div>
             <%= f.text_area :op_name, class:"form-control form-size", id:"op-name", placeholder:"商談名（必須)", rows:"1" %>
           </div>
           <div class="form-group col-6">
@@ -55,22 +61,22 @@
         <div class="row">
           <div class="company_area_id col-6">
             <div class="weight-bold-text">エリア</div>
-            <%= f.collection_select(:company_area_id, CompanyArea.all, :id, :name, {}, {class:"select-box", id:"company-area"}) %>
+            <%= f.collection_select(:company_area_id, CompanyArea.all, :id, :name, {}, {class:"select-box box-size", id:"company-area"}) %>
           </div>
           <div class="date_of_obtaining col-6">
             <div class="weight-bold-text">案件情報取得日</div>
-            <%= f.date_field :date_of_obtaining, class:"items-text", id:"date_of_obtaining", placeholder:"商談情報取得日" %>
+            <%= f.date_field :date_of_obtaining, class:"select-box box-size", id:"date_of_obtaining", placeholder:"商談情報取得日" %>
           </div>
         </div>
 
         <div class="row">
           <div class="date_of_participation col-6">
             <div class="weight-bold-text">参加決定日</div>
-            <%= f.date_field :date_of_obtaining, class:"items-text", id:"date_of_participation", placeholder:"参加決定日" %>
+            <%= f.date_field :date_of_obtaining, class:"select-box box-size", id:"date_of_participation", placeholder:"参加決定日" %>
           </div>
           <div class="date_of_negotiation col-6">
             <div class="weight-bold-text">商談日</div>
-            <%= f.date_field :date_of_negotiation, class:"items-text", id:"date_of_negotiation", placeholder:"商談日" %>
+            <%= f.date_field :date_of_negotiation, class:"select-box box-size", id:"date_of_negotiation", placeholder:"商談日" %>
           </div>
         </div><br>
 
@@ -88,28 +94,33 @@
         <div class="row">
           <div class="form-group col-6">
             <div class="weight-bold-text">予定概算粗利益</div>
-            <%= "金額" %>
+            <%= @opportunity.estimated_approximate_profit %>
           </div>
           <div class="form-group col-6">
             <div class="weight-bold-text">確定概算粗利益</div>
-            <%= "金額" %>
+            <%= @opportunity.approximate_profit %>
           </div>
         </div>
 
         <div class="row">
           <div class="contracted_date col-6">
             <div class="weight-bold-text">成約日</div>
-            <%= f.date_field :contracted_date, class:"items-text", id:"contracted_date", placeholder:"成約日" %>
+            <%= f.date_field :contracted_date, class:"select-box box-size", id:"contracted_date", placeholder:"成約日" %>
           </div>
           <div class="lost_order_date col-6">
             <div class="weight-bold-text">失注日</div>
-            <%= f.date_field :lost_order_date, class:"items-text", id:"lost_order_date", placeholder:"失注日" %>
+            <%= f.date_field :lost_order_date, class:"select-box box-size", id:"lost_order_date", placeholder:"失注日" %>
           </div>
         </div>
 
         <div class="phase_id">
           <div class="weight-bold-text">フェーズ</div>
-          <%= f.collection_select(:phase_id, Phase.all, :id, :name, {}, {class:"select-box", id:"phase"}) %>
+          <%= f.collection_select(:phase_id, Phase.all, :id, :name, {}, {class:"select-box box-size", id:"phase"}) %>
+        </div>
+
+        <div class="form-group">
+          <div class="weight-bold-text">伝達事項</div>
+          <%= f.text_area :free_text, class:"form-control form-size", id:"free_text", placeholder:"フリーテキスト", rows:"3" %>
         </div>
 
         <div class="purchase">
