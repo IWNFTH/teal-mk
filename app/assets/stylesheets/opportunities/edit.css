@@ -83,3 +83,7 @@
   display: flex;
   justify-content: center;
 }
+
+.progress-bar{
+  font-size: 18px;
+}
