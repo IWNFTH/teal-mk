@@ -4,7 +4,6 @@
 
       <div class="main-head-contents">
     <div class="main-head">
-    <%# フェーズ(Progressバー) %>
         <div class="status-bar">
           <div class="phase">フェーズ</div>
           <div class="progress" style="height: 30px;">
@@ -25,7 +24,6 @@
             <% end %>
           </div>
         </div>
-    <%# /フェーズ(Progressバー) %>
     </div>
       </div>
     
@@ -130,30 +128,27 @@
         <% end %>
       </div>
 
-    <%# コメント機能 %>
-    <div class="comment-forms col-3">
-      <div id="comments">
-        <h4>コメント一覧</h4>
-          <% @opportunity.comments.each do |c| %>
-            <div class="comment">
-              <div class="comment-text"><%= c.text%></div>
-              <div class="comment-info">
-                <p class="comment-user"><%= c.user.name %></p>
-                <p class="comment-time"><%= l c.created_at %> </p>
+      <div class="comment-forms col-3">
+        <div id="comments">
+          <h4>コメント一覧</h4>
+            <% @opportunity.comments.each do |c| %>
+              <div class="comment">
+                <div class="comment-text"><%= c.text%></div>
+                <div class="comment-info">
+                  <p class="comment-user"><%= c.user.name %></p>
+                  <p class="comment-time"><%= l c.created_at %> </p>
+                </div>
               </div>
-            </div>
+            <% end %>
+        </div>
+
+        <div class="comment-form">
+          <%= form_with model: [@opportunity, @comment], id: "comment-form" do |f| %>
+            <%= f.text_area :text , class: "comment-text"%>
+            <%= f.submit "コメントをする", class: "comment-submit" %>
           <% end %>
+        </div>
       </div>
-
-      <div class="comment-form">
-        <%= form_with model: [@opportunity, @comment], id: "comment-form" do |f| %>
-          <%= f.text_area :text , class: "comment-text"%>
-          <%= f.submit "コメントをする", class: "comment-submit" %>
-        <% end %>
-      </div>
-    </div>
-    <%# /コメント機能 %>
-
     </div>
   </div>
 </div>

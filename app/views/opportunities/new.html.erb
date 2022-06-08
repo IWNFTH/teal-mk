@@ -6,66 +6,52 @@
 
     <%= render 'shared/error_messages', model: f.object %>
 
-    <%# 商談名 %>
     <div class="op_name">
       <div class="weight-bold-text">商談名
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :op_name, class:"items-text", id:"op-name", placeholder:"商談名（必須)" %>
     </div>
-    <%# /商談名 %>
 
-    <%# 会社名 %>
     <div class="company">
       <div class="weight-bold-text">会社名
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :company, class:"items-text", id:"company", placeholder:"会社名" %>
     </div>
-      <%# /会社名 %>
 
-    <%# エリア %>
     <div class="company_area_id">
       <div class="weight-bold-text">エリア
         <span class="indispensable">必須</span>
       </div>
       <%= f.collection_select(:company_area_id, CompanyArea.all, :id, :name, {}, {class:"select-box", id:"company-area"}) %>
     </div>
-    <%# /エリア %>
 
-    <%# 先方担当者名 %>
     <div class="person_in_charge">
       <div class="weight-bold-text">先方担当者名
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :person_in_charge, class:"items-text", id:"person_in_charge", placeholder:"先方担当者名" %>
     </div>
-    <%# /先方担当者名 %>
 
-    <%# 商談情報取得日 %>
     <div class="date_of_obtaining">
       <div class="weight-bold-text">商品情報取得日
         <span class="indispensable">必須</span>
       </div>
       <%= f.date_field :date_of_obtaining, class:"items-text", id:"date_of_obtaining", placeholder:"商談情報取得日" %>
     </div>
-    <%# /商談情報取得日 %>
 
-    <%# フェーズ %>
     <div class="phase_id">
       <div class="weight-bold-text">フェーズ
         <span class="indispensable">必須</span>
       </div>
       <%= f.collection_select(:phase_id, Phase.all, :id, :name, {}, {class:"select-box", id:"phase"}) %>
     </div>
-    <%# /フェーズ %>
 
-    <%# 下部ボタン %>
     <div class="purchase-btn-contents">
       <%= f.submit "投稿する", class:"purchase-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
-    <%# /下部ボタン %>
   </div>
   <% end %>
 </div>

@@ -11,17 +11,21 @@
   </thead>
 
   <% opportunities.each do |o| %>
-    <%= link_to edit_opportunity_path(o.id) do %>
       <tbody>
         <tr>
           <th scope="row"><%= o.id %></th>
-          <td onclick='window.location="<%= edit_opportunity_path(o.id) %>"' role="link" class="table-link"><%= o.op_name %></td>
-          <td><%= o.company %></td>
-          <td onclick='window.location="<%= edit_opportunity_path(o.id) %>"' role="link" class="table-link"><%= o.company_area.name %></td>
-          <td onclick='window.location="<%= edit_opportunity_path(o.id) %>"' role="link" class="table-link"><%= o.user.name %></td>
+            <%= link_to edit_opportunity_path(o.id) do %>
+            <td onclick='window.location="<%= edit_opportunity_path(o.id) %>"' role="link" class="table-link"><%= o.op_name %></td>
+            <% end %>
+            <td><%= o.company %></td>
+            <%= link_to company_area_path(o.company_area_id) do %>
+            <td onclick='window.location="<%= company_area_path(o.company_area_id) %>"' role="link" class="table-link"><%= o.company_area.name %></td>
+            <% end %>
+            <%= link_to user_path(o.user_id) do %>
+            <td onclick='window.location="<%= user_path(o.user_id) %>"' role="link" class="table-link"><%= o.user.name %></td>
+            <% end %>
           <td><%= o.phase.name %></td>
         </tr>
       </tbody>
-    <% end %>
   <% end %>
 </table>
