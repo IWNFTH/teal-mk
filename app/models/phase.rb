@@ -6,10 +6,9 @@ class Phase < ActiveHash::Base
     { id: 4, name: '条件合意' },
     { id: 5, name: '契約締結' },
     { id: 6, name: '成約' },
-    { id: 7, name: '失注' },
+    { id: 7, name: '失注' }
   ]
 
   include ActiveHash::Associations
   has_many :opportunities
-
-  end
+end
