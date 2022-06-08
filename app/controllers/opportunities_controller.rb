@@ -1,5 +1,6 @@
 class OpportunitiesController < ApplicationController
   before_action :authenticate_user!, only: :new
+  require 'csv'
 
   def index
     @opportunities = Opportunity.all
