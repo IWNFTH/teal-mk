@@ -1,5 +1,11 @@
+.op-contents{
+  height: calc(100vh - 160px);
+}
+
 .op-main{
-  background: #DDDDDD
+  background: #DDDDDD;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 .main-head-contents{
