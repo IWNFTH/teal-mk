@@ -1,0 +1,44 @@
+<%= render "shared/header" %>
+<div class='main'>
+  <div class="op-index">
+    <div class="row">
+      <div class="opportunities">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">案件名</th>
+              <th scope="col">会社名</th>
+              <th scope="col">エリア</th>
+              <th scope="col">担当者</th>
+              <th scope="col">フェーズ</th>
+            </tr>
+          </thead>
+
+          <% @opportunities.each do |o| %>
+            <%= link_to edit_opportunity_path(o.id) do %>
+              <tbody>
+                <tr>
+                  <th scope="row"><%= o.id %></th>
+                    <%= link_to edit_opportunity_path(o.id) do %>
+                    <td onclick='window.location="<%= edit_opportunity_path(o.id) %>"' role="link" class="table-link"><%= o.op_name %></td>
+                    <% end %>
+                    <td><%= o.company %></td>
+                    <%= link_to company_area_path(o.company_area_id) do %>
+                    <td onclick='window.location="<%= company_area_path(o.company_area_id) %>"' role="link" class="table-link"><%= o.company_area.name %></td>
+                    <% end %>
+                    <%= link_to user_path(o.user_id) do %>
+                    <td onclick='window.location="<%= user_path(o.user_id) %>"' role="link" class="table-link"><%= o.user.name %></td>
+                    <% end %>
+                    <%= link_to phase_path(o.phase_id) do %>
+                    <td onclick='window.location="<%= phase_path(o.phase_id) %>"' role="link" class="table-link"><%= o.phase.name %></td>
+                    <% end %>
+                </tr>
+              </tbody>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

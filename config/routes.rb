@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :news, only: :index
   resources :company_areas, only: :show, param: :company_area_id
+  resources :phases, only: :show, param: :phase_id
 end

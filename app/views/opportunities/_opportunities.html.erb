@@ -24,7 +24,9 @@
             <%= link_to user_path(o.user_id) do %>
             <td onclick='window.location="<%= user_path(o.user_id) %>"' role="link" class="table-link"><%= o.user.name %></td>
             <% end %>
-          <td><%= o.phase.name %></td>
+            <%= link_to phase_path(o.phase_id) do %>
+            <td onclick='window.location="<%= phase_path(o.phase_id) %>"' role="link" class="table-link"><%= o.phase.name %></td>
+            <% end %>
         </tr>
       </tbody>
   <% end %>
