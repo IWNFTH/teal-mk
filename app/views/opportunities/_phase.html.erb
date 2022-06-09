@@ -1,0 +1,20 @@
+<div class="status-bar">
+  <div class="phase">フェーズ</div>
+  <div class="progress" style="height: 30px;">
+    <% if opportunity.phase_id == 1 %>
+      <div class="progress-bar" role="progressbar" style="width: 15%;"><%= opportunity.phase.name %></div>
+    <% elsif opportunity.phase_id == 2 %>
+      <div class="progress-bar" role="progressbar" style="width: 30%;"><%= opportunity.phase.name %></div>
+    <% elsif opportunity.phase_id == 3 %>
+      <div class="progress-bar" role="progressbar" style="width: 45%;"><%= opportunity.phase.name %></div>
+    <% elsif opportunity.phase_id == 4 %>
+      <div class="progress-bar" role="progressbar" style="width: 60%;"><%= opportunity.phase.name %></div>
+    <% elsif opportunity.phase_id == 5 %>
+      <div class="progress-bar" role="progressbar" style="width: 75%;"><%= opportunity.phase.name %></div>
+    <% elsif opportunity.phase_id == 6 %>
+      <div class="progress-bar" role="progressbar" style="width: 100%;"><%= opportunity.phase.name %></div>
+    <% else %>
+      <div class="progress-bar bg-warning" role="progressbar" style="width: 100%;"><%= opportunity.phase.name %></div>
+    <% end %>
+  </div>
+</div>
