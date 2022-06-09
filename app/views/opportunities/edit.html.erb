@@ -72,14 +72,23 @@
             <%= f.text_area :sales_amount, class:"form-control form-size", id:"sales_amount", placeholder:"確定売上金額", rows:"1" %>
           </div>
         </div>
+        <%# 粗利益 %>
         <div class="row">
           <div class="form-group col-6">
             <div class="weight-bold-text">予定概算粗利益</div>
-            <%= "金額" %>
+            <% if @opportunity.estimated_approximate_profit.floor != "" %>
+              <%= @opportunity.estimated_approximate_profit.floor %>
+            <% else %>
+              <%= "---" %>
+            <% end %>
           </div>
           <div class="form-group col-6">
             <div class="weight-bold-text">確定概算粗利益</div>
-            <%= "金額" %>
+            <% if @opportunity.approximate_profit.floor != "" %>
+              <%= @opportunity.approximate_profit.floor %>
+            <% else %>
+              <%= "---" %>
+            <% end %>
           </div>
         </div>
         <%# 成約日フォーム %>

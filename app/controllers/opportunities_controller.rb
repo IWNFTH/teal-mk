@@ -46,7 +46,8 @@ class OpportunitiesController < ApplicationController
 
   def opportunity_edit_params
     params.require(:opportunity).permit(:op_name, :company, :person_in_charge, :date_of_obtaining, :date_of_participation, :phase_id,
-                                        :date_of_negotiation, :estimated_sales_amount, :sales_amount, :contracted_date, :lost_order_date, :company_area_id, :free_text, :estimated_approximate_profit, :approximate_profit)
+                                        :date_of_negotiation, :estimated_sales_amount, :sales_amount, :contracted_date, :lost_order_date, :company_area_id, :free_text)
+                                        .merge(@opportunity.set_profit)
   end
 
   def send_opportunities_csv(opportunities)
