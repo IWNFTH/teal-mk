@@ -8,10 +8,10 @@ class CreateOpportunities < ActiveRecord::Migration[6.0]
       t.date       :date_of_obtaining, null: false
       t.date       :date_of_participation
       t.date       :date_of_negotiation
-      t.integer    :estimated_sales_amount
-      t.integer    :sales_amount
-      t.integer    :estimated_approximate_profit
-      t.integer    :approximate_profit
+      t.integer    :estimated_sales_amount, null: false, default: 0
+      t.integer    :sales_amount, null: false, default: 0
+      t.integer    :estimated_approximate_profit, null: false, default: 0
+      t.integer    :approximate_profit, null: false, default: 0
       t.date       :contracted_date
       t.date       :lost_order_date
       t.integer    :phase_id, null: false

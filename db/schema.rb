@@ -30,8 +30,10 @@ ActiveRecord::Schema.define(version: 2022_05_31_112353) do
     t.date "date_of_obtaining", null: false
     t.date "date_of_participation"
     t.date "date_of_negotiation"
-    t.integer "estimated_sales_amount"
-    t.integer "sales_amount"
+    t.integer "estimated_sales_amount", default: 0, null: false
+    t.integer "sales_amount", default: 0, null: false
+    t.integer "estimated_approximate_profit", default: 0, null: false
+    t.integer "approximate_profit", default: 0, null: false
     t.date "contracted_date"
     t.date "lost_order_date"
     t.integer "phase_id", null: false
