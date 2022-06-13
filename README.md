@@ -7,6 +7,11 @@ Teal(ティール)
 # URL
 https://teal-mk.herokuapp.com/
 
+# Basic認証
+ID：otakacamp
+
+PW：otakacamp2022
+
 # テスト用アカウント
 Name:社員A
 
@@ -33,6 +38,7 @@ PW：111111aaaaaa
 ・情報を更新した際にポップアップを表示する機能  
 ・テーブルにソートをかける機能  
 ・条件で絞ったデータをCSVで出力する機能  
+・案件を投稿した際、案件名は「YYMMDD-001案件名」と自動で番号が振られる機能。  
 
 # データベース設計
 [![Image from Gyazo](https://i.gyazo.com/12b43e8a8bab803eec14273d1950050d.png)](https://gyazo.com/12b43e8a8bab803eec14273d1950050d)
