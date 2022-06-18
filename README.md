@@ -5,7 +5,7 @@ Teal(ティール)
 営業進捗管理ツール
 
 # URL
-https://teal-mk.herokuapp.com/
+http://35.76.209.211/
 
 # Basic認証
 ID：otakacamp
