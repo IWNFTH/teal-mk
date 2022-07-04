@@ -10,17 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_31_112353) do
-
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "text", null: false
-    t.bigint "user_id"
-    t.bigint "opportunity_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["opportunity_id"], name: "index_comments_on_opportunity_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2022_05_31_111621) do
 
   create_table "opportunities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "op_name", null: false
@@ -57,7 +47,5 @@ ActiveRecord::Schema.define(version: 2022_05_31_112353) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "comments", "opportunities"
-  add_foreign_key "comments", "users"
   add_foreign_key "opportunities", "users"
 end
