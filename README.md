@@ -5,7 +5,8 @@ Teal(ティール)
 営業進捗管理ツール
 
 # URL
-http://35.76.209.211/
+非公開
+<!-- http://35.76.209.211/ -->
 
 # Basic認証
 ID：otakacamp
@@ -14,13 +15,11 @@ PW：otakacamp2022
 
 # テスト用アカウント
 Name:社員A
-
 Eメール:a@a
-
 PW：111111aaaaaa
 
-# 利用方法
-見込み客となる案件の情報を登録し、社内で進捗状況を共有する。  
+# 利用目的
+見込み客となる案件の情報を登録し、社内で進捗状況を共有する。
 案件の情報をcsvとして出力し、データ分析資料として活用できる。
 
 # アプリケーションを作成した背景
@@ -47,11 +46,10 @@ PW：111111aaaaaa
 [![Image from Gyazo](https://i.gyazo.com/cd2a19af9be36280696f65bdfa63cb4c.png)](https://gyazo.com/cd2a19af9be36280696f65bdfa63cb4c)
 
 # 開発環境
-・フロントエンド  Ruby on Rails  
-・バックエンド  Ruby on Rails  
-・インフラ MacBookPro(Apple M1 Pro)  
-・テスト Rspec  
-・テキストエディタ Visual Studio Code  
+・Ruby 2.6.5
+・Ruby on Rails 6.0.5
+・インフラ MacBookPro(Apple M1 Pro)
+・テスト Rspec
 ・タスク管理 Github
 
 # ローカルでの動作方法
